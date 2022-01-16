@@ -1,0 +1,30 @@
+{
+  "uuSubAppDataStore": {
+    "primary": {
+      "type": "uuAppObjectStore",
+      "realization": "MongoDB",
+      "schemaMap": {
+        "subjectMain": {
+          "realization": "dao/SubjectMainMongo",
+          "maxNoi": 1
+        },
+        "subject": {
+          "realization": "/dao/SubjectMongo",
+          "maxNoi": 1000
+        },
+        "createSubject": {
+          "realization": "dao/CreateSubjectMongo"
+        },
+        "student": {
+          "realization": "dao/StudentMongo"
+        },
+        "studyProgram": {
+          "realization": "dao/StudyProgramMongo"
+        },
+        "studyMaterial": {
+          "realization": "dao/StudyMaterialMongo"
+        }
+      }
+    }
+  }
+}

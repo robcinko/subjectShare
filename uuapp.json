@@ -1,0 +1,266 @@
+{
+  "product": "uu_subject_maing01",
+  "version": "0.1.0",
+  "license": "License Commercial",
+  "description": {
+    "en": "",
+    "cs": ""
+  },
+  "docUri": "",
+  "flsUri": "",
+  "slsUri": "",
+  "imageUri": "",
+  "devkit": {
+    "development": {
+      "appBoxLocationUri": "----- VALUE REQUIRED -----",
+      "appDeploymentUri": null,
+      "resourcePoolUri": "----- VALUE REQUIRED -----"
+    }
+  },
+  "uu_subject": {
+    "namespace": "UuSubject",
+    "sourceUri": "https://cdn.plus4u.net/uu-subject/%s/uu_subject.min.js",
+    "componentList": []
+  },
+  "uu_subject_maing01-hi": {
+    "componentList": [
+      {
+        "code": "UuSubject.SubjectList",
+        "name": "SubjectList",
+        "tagList": [
+          "UuSubject",
+          "SubjectList"
+        ],
+        "docCode": "UuSubjectSubjectList",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.SubjectList />"
+      },
+      {
+        "code": "UuSubject.SubjectsList",
+        "name": "SubjectsList",
+        "tagList": [
+          "UuSubject",
+          "SubjectsList"
+        ],
+        "docCode": "UuSubjectSubjectsList",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.SubjectsList />"
+      },
+      {
+        "code": "UuSubject.Routes.Testing",
+        "name": "Testing",
+        "tagList": [
+          "UuSubject",
+          "Routes",
+          "Testing"
+        ],
+        "docCode": "UuSubjectRoutesTesting",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.Routes.Testing />"
+      },
+      {
+        "code": "UuSubject.Routes.SubjectsCreate",
+        "name": "SubjectsCreate",
+        "tagList": [
+          "UuSubject",
+          "Routes",
+          "SubjectsCreate"
+        ],
+        "docCode": "UuSubjectRoutesSubjectsCreate",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.Routes.SubjectsCreate />"
+      },
+      {
+        "code": "UuSubject.SubjectDetail",
+        "name": "SubjectDetail",
+        "tagList": [
+          "UuSubject",
+          "SubjectDetail"
+        ],
+        "docCode": "UuSubjectSubjectDetail",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.SubjectDetail />"
+      },
+      {
+        "code": "UuSubject.StudyProgramCreate",
+        "name": "StudyProgramCreate",
+        "tagList": [
+          "UuSubject",
+          "StudyProgramCreate"
+        ],
+        "docCode": "UuSubjectStudyProgramCreate",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.StudyProgramCreate />"
+      },
+      {
+        "code": "UuSubject.Routes.StudyProgramCreate",
+        "name": "StudyProgramCreate",
+        "tagList": [
+          "UuSubject",
+          "Routes",
+          "StudyProgramCreate"
+        ],
+        "docCode": "UuSubjectRoutesStudyProgramCreate",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.Routes.StudyProgramCreate />"
+      },
+      {
+        "code": "UuSubject.Routes.SubjectDetail",
+        "name": "SubjectDetail",
+        "tagList": [
+          "UuSubject",
+          "Routes",
+          "SubjectDetail"
+        ],
+        "docCode": "UuSubjectRoutesSubjectDetail",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.Routes.SubjectDetail />"
+      },
+      {
+        "code": "UuSubject.Routes.StudyProgramDetail",
+        "name": "StudyProgramDetail",
+        "tagList": [
+          "UuSubject",
+          "Routes",
+          "StudyProgramDetail"
+        ],
+        "docCode": "UuSubjectRoutesStudyProgramDetail",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.Routes.StudyProgramDetail />"
+      },
+      {
+        "code": "UuSubject.Bricks.Data",
+        "name": "Data",
+        "tagList": [
+          "UuSubject",
+          "Bricks",
+          "Data"
+        ],
+        "docCode": "UuSubjectBricksData",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.Bricks.Data />"
+      },
+      {
+        "code": "UuSubject.Bricks.SubjectUpdateForm",
+        "name": "SubjectUpdateForm",
+        "tagList": [
+          "UuSubject",
+          "Bricks",
+          "SubjectUpdateForm"
+        ],
+        "docCode": "UuSubjectBricksSubjectUpdateForm",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.Bricks.SubjectUpdateForm />"
+      },
+      {
+        "code": "UuSubject.Routes.SubjectUpdate",
+        "name": "SubjectUpdate",
+        "tagList": [
+          "UuSubject",
+          "Routes",
+          "SubjectUpdate"
+        ],
+        "docCode": "UuSubjectRoutesSubjectUpdate",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.Routes.SubjectUpdate />"
+      },
+      {
+        "code": "UuSubject.Routes.StudyMaterialDetail",
+        "name": "StudyMaterialDetail",
+        "tagList": [
+          "UuSubject",
+          "Routes",
+          "StudyMaterialDetail"
+        ],
+        "docCode": "UuSubjectRoutesStudyMaterialDetail",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.Routes.StudyMaterialDetail />"
+      },
+      {
+        "code": "UuSubject.Bricks.Data2",
+        "name": "Data2",
+        "tagList": [
+          "UuSubject",
+          "Bricks",
+          "Data2"
+        ],
+        "docCode": "UuSubjectBricksData2",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.Bricks.Data2 />"
+      },
+      {
+        "code": "UuSubject.Bricks.SubjectStudyMaterials",
+        "name": "SubjectStudyMaterials",
+        "tagList": [
+          "UuSubject",
+          "Bricks",
+          "SubjectStudyMaterials"
+        ],
+        "docCode": "UuSubjectBricksSubjectStudyMaterials",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.Bricks.SubjectStudyMaterials />"
+      },
+      {
+        "code": "UuSubject.Routes.SubjectStudyMaterials",
+        "name": "SubjectStudyMaterials",
+        "tagList": [
+          "UuSubject",
+          "Routes",
+          "SubjectStudyMaterials"
+        ],
+        "docCode": "UuSubjectRoutesSubjectStudyMaterials",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubject.Routes.SubjectStudyMaterials />"
+      }
+    ]
+  },
+  "uu_subject_maing01-server": {}
+}

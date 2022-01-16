@@ -1,0 +1,111 @@
+{
+  "{vendor}-{uuApp}-{uuSubApp}": {
+    "useCaseMap": {
+      "sys/uuAppWorkspace/init": {
+        "realization": "api/controllers/SubjectMainController.init",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "defaultUve": {
+        "realization": "index.html",
+        "httpMethod": "GET",
+        "type": "UVE"
+      },
+      "sys/uuAppWorkspace/initUve": {
+        "realization": "index.html",
+        "httpMethod": "GET",
+        "type": "UVE"
+      },
+      "sayHello": {
+        "realization": "api/controllers/SubjectMainController.sayHello",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "subject/create": {
+        "realization": "api/controllers/SubjectController.create",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "subject/update": {
+        "realization": "api/controllers/SubjectController.update",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "subject/delete": {
+        "realization": "api/controllers/SubjectController.delete",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "subject/list": {
+        "realization": "api/controllers/SubjectController.list",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "subject/get": {
+        "realization": "api/controllers/SubjectController.get",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "student/create": {
+        "realization": "api/controllers/StudentController.create",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "studyProgram/create": {
+        "realization": "api/controllers/StudyProgramController.create",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "studyProgram/load": {
+        "realization": "api/controllers/StudyProgramController.load",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "subject/load": {
+        "realization": "api/controllers/SubjectController.load",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "studyProgram/list": {
+        "realization": "api/controllers/StudyProgramController.list",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "studyProgram/delete": {
+        "realization": "api/controllers/StudyProgramController.delete",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "studyProgram/get": {
+        "realization": "api/controllers/StudyProgramController.get",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "subject/studyMaterialAdd": {
+        "realization": "api/controllers/SubjectController.studyMaterialAdd",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "studyMaterial/get": {
+        "realization": "api/controllers/StudyMaterialController.get",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "subject/studyMaterialGet": {
+        "realization": "api/controllers/SubjectController.studyMaterialGet",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "subject/studyMaterialToSubject": {
+        "realization": "api/controllers/SubjectController.studyMaterialToSubject",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "subject/feDataRemove": {
+        "realization": "api/controllers/SubjectController.feDataRemove",
+        "httpMethod": "POST",
+        "type": "CMD"
+      }
+    }
+  }
+}
