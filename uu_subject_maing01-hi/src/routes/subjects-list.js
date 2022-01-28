@@ -135,7 +135,7 @@ export const SubjectList = Data(
                       <UU5.Bricks.Icon icon="mdi-file-document-edit" />
                     </UU5.Bricks.Button>
                     
-                    <UU5.Bricks.Button colorSchema="red"  onClick={() => setSubjectToDelete(cellProps.data), console.log("cellprops" + cellProps.data.data.id)}>
+                    <UU5.Bricks.Button colorSchema="red"  onClick={() => setSubjectToDelete(cellProps.data)}>
                       <UU5.Bricks.Icon icon="mdi-delete" />
                     </UU5.Bricks.Button>
                   </>

@@ -1,6 +1,6 @@
 {
   "name": "uu_subject",
-  "version": "0.1.0",
+  "version": "0.1.0-DEV",
   "private": true,
   "workspaces": [
     "uu_subject"

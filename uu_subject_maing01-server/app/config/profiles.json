@@ -27,28 +27,25 @@
       },
       "subject/create": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities"]
       },
       "subject/update": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities"]
       },
       "subject/delete": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Executives"]
+        "profileList": ["Authorities"]
       },
       "subject/list": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities", "Executives", "Readers"]
       },
       "subject/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Executives"]
       },
-      "student/create": {
-        "sysStateList": ["active"],
-        "profileList": ["Authorities"]
-      },
+
       "studyProgram/create": {
         "sysStateList": ["active"],
         "profileList": ["Authorities"]
@@ -75,71 +72,71 @@
       },
       "uu-app-binarystore/createBinary": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "uu-app-binarystore/getBinary": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "uu-app-binarystore/getBinaryData": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "uu-app-binarystore/updateBinaryData": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "uu-app-binarystore/updateBinary": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "uu-app-binarystore/deleteBinary": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "uu-app-binarystore/listBinaries": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "uu-app-binarystore/getBinaryVersion": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "uu-app-binarystore/updateBinaryVersion": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "uu-app-binarystore/getBinaryVersionData": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "uu-app-binarystore/deleteBinaryVersion": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "uu-app-binarystore/listBinaryVersions": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "subject/studyMaterialAdd": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Executives"]
       },
       "studyMaterial/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Executives"]
       },
       "subject/studyMaterialGet": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Executives"]
       },
       "subject/studyMaterialToSubject": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Executives"]
       },
       "subject/feDataRemove": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Executives"]
       }
     }
   }
