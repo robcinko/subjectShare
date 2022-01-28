@@ -6,6 +6,6 @@
   },
   "asid_license_owner_list": ["8822-461-1"],
   "asid": "11111111111111111111111111111111",
-  "log_level": "INFO"
+  "log_level": "DEBUG"
 }
 

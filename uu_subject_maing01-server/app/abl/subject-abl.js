@@ -4,6 +4,7 @@ const { Validator } = require("uu_appg01_server").Validation;
 const { DaoFactory } = require("uu_appg01_server").ObjectStore;
 const { ValidationHelper } = require("uu_appg01_server").AppServer;
 const Errors = require("../api/errors/subject-error.js");
+const {LoggerFactory} = require("uu_appg01_server").Logging;
 
 const WARNINGS = {
   createUnsupportedKeys: {
@@ -26,6 +27,8 @@ const WARNINGS = {
   },
 
 };
+
+const logger = LoggerFactory.get("UuJokes.Abls.jokeAbl");
 
 class SubjectAbl {
 
@@ -246,6 +249,9 @@ class SubjectAbl {
         throw new Errors.Create.SubjectDaoCreateFailed({uuAppErrorMap}, e)
       }
       throw e;
+    }
+    if (logger.isDebugLoggable()) {
+      logger.debug("Creating subject with this parameters: " + JSON.stringify(dtoIn));
     }
     dtoOut.uuAppErrorMap = uuAppErrorMap;
     return{
