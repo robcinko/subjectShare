@@ -95,6 +95,13 @@ const GetSubject = {
       this.message = "Subject does not exist";
     }
   },
+  UserNotAuthorized: class extends SubjectMainUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${GetSubject.UC_CODE}userNotAuthorized`;
+      this.message = "User not authorized.";
+    }
+  },
   
 };
 

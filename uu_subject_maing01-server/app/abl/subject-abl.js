@@ -28,7 +28,7 @@ const WARNINGS = {
 
 };
 
-const logger = LoggerFactory.get("UuJokes.Abls.jokeAbl");
+const logger = LoggerFactory.get("UuSubject.Abls.subjectAbl");
 
 class SubjectAbl {
 
@@ -118,21 +118,25 @@ class SubjectAbl {
     return subject
   }
 
-  async get(awid, dtoIn) {
+  async get(awid, dtoIn, authorizationResult, session) {
     let validationResult = this.validator.validate("getSubjectDtoInType", dtoIn);
     let uuAppErrorMap = ValidationHelper.processValidationResult(
+      
       dtoIn,
       validationResult,
       WARNINGS.getUnsupportedKeys.code,
       Errors.GetSubject.InvalidDtoIn
     );
+  
 
     let subject = await this.dao.get(awid, dtoIn.id);
     if (!subject) {
       throw new Errors.Get.SubjectDoesNotExist(uuAppErrorMap, { subjectId: dtoIn.id });
     }
 
+
     subject.uuAppErrorMap = uuAppErrorMap;
+    
     return subject;
   }
 

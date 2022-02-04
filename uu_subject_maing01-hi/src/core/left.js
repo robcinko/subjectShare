@@ -52,7 +52,6 @@ export const Left = createVisualComponent({
           { id: "subjectList", href: "subjectList", content: <UU5.Bricks.Lsi lsi={{en: "Zobraziť predmety"}} />},
           { id: "subjectCreate", href: "subjectCreate", content: <UU5.Bricks.Lsi lsi={{en: "Pridať predmet"}} />},
           {id: "studyProgramCreate", href: "studyProgramCreate", content: <UU5.Bricks.Lsi lsi={{en: "Štúdijné programy"}} />},
-          { id: "testing", href: "testing", content: <UU5.Bricks.Lsi lsi={{en: "Testing"}} />}
         ]}
         
         />

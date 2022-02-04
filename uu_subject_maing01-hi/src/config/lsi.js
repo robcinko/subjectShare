@@ -39,19 +39,13 @@ const Lsi = {
 
   auth: {
     welcome: {
-      cs: "Vítejte",
+      cs: "Vítejte v aplikaci uuSubject",
       en: "Welcome",
     },
 
     intro: {
-      cs: `<uu5string/>Tato šablona obsahuje připravenou klientskou a serverovou část. Jednotlivé komponety, které jsou zde zobrazeny,
-          jsou určeny k tomu, aby demonstrovaly možnosti a způsob použití. Je vhodné je upravit, zkopírovat či smazat pro
-          potřeby vyvíjené aplikace. Více o struktuře uuApp se dozvíte v dokumetaci viz&nbsp;
-          <UU5.Bricks.Link
-            href="https://uuapp.plus4u.net/uu-bookkit-maing01/e884539c8511447a977c7ff070e7f2cf/book"
-            target="_blank"
-            content="uuAppDevKit"
-          />.`,
+      cs: `Tato aplikace je určena pro sdílení studijních materiálů pro jednotlivé předměty vytvořených studenty. Dále aplikace zobrazuje základní informace o předmětech.
+          `,
       en: `<uu5string/>This template consist of prepared client and server side. Shown components demonstrate possibilities and way of
           using. For application developing purposes they are suitable for modifying, copying and deleting. More about
           uuApp Structure see documentation&nbsp;

@@ -20,11 +20,11 @@ class SubjectController {
   }
 
   load(ucEnv) {
-    return SubjectAbl.load(ucEnv.getUri().getAwid(), ucEnv.getDtoIn());
+    return SubjectAbl.load(ucEnv.getUri().getAwid(), ucEnv.getDtoIn(), ucEnv.getAuthorizationResult());
   }
 
   get(ucEnv) {
-    return SubjectAbl.get(ucEnv.getUri().getAwid(), ucEnv.getDtoIn());
+    return SubjectAbl.get(ucEnv.getUri().getAwid(), ucEnv.getDtoIn(), ucEnv.getSession(), ucEnv.getAuthorizationResult());
   }
 
   list(ucEnv) {
@@ -36,11 +36,11 @@ class SubjectController {
   }
   
   create(ucEnv) {
-    return SubjectAbl.create(ucEnv.getUri().getAwid(), ucEnv.getDtoIn(), ucEnv.getSession());
+    return SubjectAbl.create(ucEnv.getUri().getAwid(), ucEnv.getDtoIn(), ucEnv.getSession(), ucEnv.getAuthorizationResult());
   }
 
   update(ucEnv) {
-    return SubjectAbl.update(ucEnv.getUri().getAwid(), ucEnv.getDtoIn());
+    return SubjectAbl.update(ucEnv.getUri().getAwid(), ucEnv.getDtoIn(), ucEnv.getAuthorizationResult());
   }
 
 

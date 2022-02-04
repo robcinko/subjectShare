@@ -1,6 +1,6 @@
 {
   "product": "uu_subject_maing01",
-  "version": "0.1.0-DEV",
+  "version": "0.1.2-DEV",
   "license": "License Commercial",
   "description": {
     "en": "",
@@ -13,7 +13,12 @@
   "devkit": {
     "development": {
       "appBoxLocationUri": "ues:UCL-BT:OPR.RSP/APPBOXES",
-      "appDeploymentUri": null
+      "appDeploymentUri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]:UUN.BPMI21WPT01.MAING01[61f3ff97a1342b5e22058786]",
+      "uuCloudBaseUri": "https://sys-eu-c-3.plus4u.net",
+      "uuCloudLogStoreBaseUri": "https://cmd-eu-c-3.plus4u.net",
+      "uu_app_oidc_providers_oidcg02_client_executive": "579-5605-5699-1",
+      "uu_app_oidc_primary_provider": "oidcg02",
+      "uu_app_binarystore_uri": "https://uuappg01-eu-c-3.plus4u.net/uu-appbinarystore-maing02/491f66a0306bad36188d1ef117f014a1"
     }
   },
   "uu_subject": {
