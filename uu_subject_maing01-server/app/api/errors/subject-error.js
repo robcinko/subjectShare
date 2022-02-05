@@ -105,6 +105,19 @@ const GetSubject = {
   
 };
 
+const ListSubject = {
+  UC_CODE: `${SubjectMainUseCaseError.ERROR_PREFIX}get/`,
+
+  UserNotAuthorized: class extends SubjectMainUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${ListSubject.UC_CODE}userNotAuthorized`;
+      this.message = "User not authorized.";
+    }
+  },
+  
+};
+
 const LoadSubject = {
   UC_CODE: `${SubjectMainUseCaseError.ERROR_PREFIX}load/`,
   InvalidDtoIn: class extends SubjectMainUseCaseError {
@@ -156,7 +169,8 @@ module.exports = {
   GetSubject,
   DeleteSubject,
   CreateSubject,
-  UpdateSubject
+  UpdateSubject,
+  ListSubject
 };
 
 

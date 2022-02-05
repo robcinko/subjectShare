@@ -34,9 +34,7 @@ export const StudyProgramCreate = createVisualComponent({
         delete: Calls.studyProgramDelete,
       }
     });
-   
-console.log(studyProgramDataList.data)
-
+    
     const _resolveState = () => {
       switch (studyProgramDataList.state) {
         case "pendingNoData":

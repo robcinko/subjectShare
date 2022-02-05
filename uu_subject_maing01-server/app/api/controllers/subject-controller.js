@@ -28,7 +28,7 @@ class SubjectController {
   }
 
   list(ucEnv) {
-    return SubjectAbl.list(ucEnv.getUri().getAwid(), ucEnv.getDtoIn());
+    return SubjectAbl.list(ucEnv.getUri().getAwid(), ucEnv.getDtoIn(), ucEnv.getSession(), ucEnv.getAuthorizationResult());
   }
 
   delete(ucEnv) {
@@ -40,7 +40,7 @@ class SubjectController {
   }
 
   update(ucEnv) {
-    return SubjectAbl.update(ucEnv.getUri().getAwid(), ucEnv.getDtoIn(), ucEnv.getAuthorizationResult());
+    return SubjectAbl.update(ucEnv.getUri().getAwid(), ucEnv.getDtoIn(), ucEnv.getAuthorizationResult(), ucEnv.getSession());
   }
 
 

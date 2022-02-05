@@ -25,6 +25,9 @@ const WARNINGS = {
   loadUnsupportedKeys: {
     code: `${Errors.GetStudyMaterial.UC_CODE}unsupportedKeys`,
   },
+  loadUnsupportedKeys: {
+    code: `${Errors.ListSubject.UC_CODE}unsupportedKeys`,
+  },
 
 };
 
@@ -118,7 +121,7 @@ class SubjectAbl {
     return subject
   }
 
-  async get(awid, dtoIn, authorizationResult, session) {
+  async get(awid, dtoIn) {
     let validationResult = this.validator.validate("getSubjectDtoInType", dtoIn);
     let uuAppErrorMap = ValidationHelper.processValidationResult(
       
@@ -127,23 +130,42 @@ class SubjectAbl {
       WARNINGS.getUnsupportedKeys.code,
       Errors.GetSubject.InvalidDtoIn
     );
-  
+    
+   
+    
 
     let subject = await this.dao.get(awid, dtoIn.id);
     if (!subject) {
       throw new Errors.Get.SubjectDoesNotExist(uuAppErrorMap, { subjectId: dtoIn.id });
     }
-
+    
 
     subject.uuAppErrorMap = uuAppErrorMap;
-    
     return subject;
   }
 
-  async list(awid, dtoIn) {
+  async list(awid, dtoIn, session, authorizationResult) {
     let result
+    let authorizedProfiles = authorizationResult.getAuthorizedProfiles();
+
+    /*
+    let uuAppErrorMap = ValidationHelper.processValidationResult(
+      dtoIn,
+      validationResult,
+      WARNINGS.updateUnsupportedKeys.code,
+      Errors.ListSubject.InvalidDtoIn
+    );
+
+    if (
+       !authorizationResult.getAuthorizedProfiles().includes(SubjectAbl.AUTHORITIES)
+     ) {
+       throw new Errors.ListSubject.UserNotAuthorized({ uuAppErrorMap });
+     }
+    */
+    
     result = await this.dao.list(awid, dtoIn.sortBy, dtoIn.order, dtoIn.pageInfo);
-    return result 
+    result.authorizedProfileList = authorizedProfiles;
+    return result
  
   }
 
@@ -184,6 +206,15 @@ class SubjectAbl {
        WARNINGS.updateUnsupportedKeys.code,
        Errors.UpdateSubject.InvalidDtoIn
      );
+/*
+     if (
+      session.getIdentity().getUuIdentity() !== subject.uuIdentity &&
+       !authorizationResult.getAuthorizedProfiles().includes(SubjectAbl.AUTHORITIES),
+       console.log(session.getIdentity().getUuIdentity())
+     ) {
+       throw new Errors.Get.UserNotAuthorized({ uuAppErrorMap });
+     }
+*/
      let subject = await this.dao.get(awid, dtoIn.id);
      if(!subject){
       throw new Errors.UpdateSubject.SubjectNotExist({uuAppErrorMap}, {id:dtoIn.id});
@@ -207,7 +238,7 @@ class SubjectAbl {
    }
   
 
-  async create(awid, dtoIn, session) {
+  async create(awid, dtoIn, session, authorizationResult) {
     // HDS 1
     let validationResult = this.validator.validate("createSubjectDtoInType", dtoIn);
     // A1, A2

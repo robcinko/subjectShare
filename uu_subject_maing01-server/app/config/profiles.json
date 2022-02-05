@@ -39,11 +39,11 @@
       },
       "subject/list": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Executives", "Readers"]
+        "profileList": ["Authorities", "Executives", "Readers", "Public"]
       },
       "subject/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Executives"]
+        "profileList": ["Authorities", "Executives", "Public"]
       },
 
       "studyProgram/create": {
@@ -60,7 +60,7 @@
       },
       "studyProgram/list": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Public"]
       },
       "studyProgram/delete": {
         "sysStateList": ["active"],
@@ -68,7 +68,7 @@
       },
       "studyProgram/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities","Public"]
       },
       "uu-app-binarystore/createBinary": {
         "sysStateList": ["active"],
@@ -124,11 +124,11 @@
       },
       "studyMaterial/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Executives"]
+        "profileList": ["Authorities", "Executives", "Public"]
       },
       "subject/studyMaterialGet": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Executives"]
+        "profileList": ["Authorities", "Executives", "Public"]
       },
       "subject/studyMaterialToSubject": {
         "sysStateList": ["active"],

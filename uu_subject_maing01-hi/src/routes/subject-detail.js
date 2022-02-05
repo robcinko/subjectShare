@@ -5,7 +5,6 @@ import Uu5Elements from "uu5g05-elements";
 import Config from "./config/config";
 import Calls from "../calls";
 import StudyProgramDetail from "./study-program-detail";
-import StudyMaterialDetail from "./study-material-detail";
 import Uu5Tiles from "uu5tilesg02";
 import Data2 from "../bricks/data2";
 //@@viewOff:imports
@@ -149,12 +148,9 @@ createVisualComponent({
                         UU5.Environment.getRouter().setRoute("subjectStudyMaterials", { id: subjectData.data.id });
                       }}
                     >Zobraziť štúdijné materiály</UU5.Bricks.Button>
-
           </UU5.Bricks.Jumbotron>
+          
       </UU5.Bricks.Card>
-
-
-
       //@@viewOff:render
     )
       }

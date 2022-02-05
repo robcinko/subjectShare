@@ -1,13 +1,13 @@
 //@@viewOn:imports
 import UU5 from "uu5g04";
-import { createVisualComponent, useState, useDataList } from "uu5g04-hooks";
+import { createVisualComponent, useState, useDataList, useDataObject } from "uu5g04-hooks";
 import Uu5Tiles from "uu5tilesg02";
 import Config from "./config/config";
 
 import StudyProgramDetail from "./study-program-detail";
 import Data from "../bricks/data";
 import Calls from "../calls";
-import BookUpdateForm from "./subject-update";
+import SubjectUpdateForm from "./subject-update";
 
 //@@viewOff:imports
 
@@ -47,6 +47,13 @@ export const SubjectList = Data(
         initialDtoIn: {},
       });
 
+      const auth = useDataObject({
+        handlerMap: {
+          load: Calls.subjectList,
+          
+        }
+      });
+
       const studyPrograms = [];
       if (props.data) {
         props.data.forEach((studyProgram) => {
@@ -73,11 +80,16 @@ export const SubjectList = Data(
         setSubjectToDelete(null);
       }
       //@@viewOff:interface
-
       //@@viewOn:render
       const className = Config.Css.css``;
       const attrs = UU5.Common.VisualComponent.getAttrs(props, className);
       const currentNestingLevel = UU5.Utils.NestingLevel.getNestingLevel(props, STATICS);
+      
+      
+      const array = auth.data?.authorizedProfileList||[]
+      let isLogedInA = array.includes('Authorities');
+      
+      
 
       function getColumns() {
       
@@ -127,9 +139,9 @@ export const SubjectList = Data(
                     >
                       <UU5.Bricks.Icon icon="mdi-text-subject" />
                     </UU5.Bricks.Button>
-                    
+
+                  {isLogedInA&&(<>
                     <UU5.Bricks.Button colorSchema="green" style = "margin-right: 10px" onClick={() => {
-                      console.log(cellProps.data)
                       setSelectedSubject(cellProps.data)
                       }}>
                       <UU5.Bricks.Icon icon="mdi-file-document-edit" />
@@ -138,6 +150,7 @@ export const SubjectList = Data(
                     <UU5.Bricks.Button colorSchema="red"  onClick={() => setSubjectToDelete(cellProps.data)}>
                       <UU5.Bricks.Icon icon="mdi-delete" />
                     </UU5.Bricks.Button>
+                    </> )}
                   </>
                 );
               }
@@ -171,8 +184,8 @@ export const SubjectList = Data(
             />
           ),
           getValueLabel: (value) => {
-            let authorObject = studyPrograms.find((authorOption) => authorOption.value === value[0]);
-            return authorObject.content;
+            let studyObject = studyPrograms.find((findValue) => findValue.value === value[0]);
+            return studyObject.content;
           },
         },
       ];
@@ -180,14 +193,14 @@ export const SubjectList = Data(
       let Sorters = [
         {
           key: "nameAsc",
-          label: { cs: "Název", en: "Name" },
+          label: { cs: "Názov", en: "Name" },
           sorterFn: (a, b) => {
             return a.data.name.localeCompare(b.data.name);
           },
         },
         {
           key: "nameDsc",
-          label: { cs: "Název", en: "Name" },
+          label: { cs: "Názov", en: "Name" },
           ascending: false,
           sorterFn: (a, b) => {
             return a.data.name.localeCompare(b.data.name);
@@ -204,9 +217,9 @@ export const SubjectList = Data(
             <UU5.Bricks.Modal
             header="Edit predmetu"
             shown={!!selectedSubject}
-            onClose={() => setSelectedBook(null)}
+            onClose={() => setSelectedSubject(null)}
           >
-            <BookUpdateForm
+            <SubjectUpdateForm
               selectedSubject={selectedSubject.data}
               setSelectedSubject={setSelectedSubject}
               handleCreateSubject={handleCreateSubject}

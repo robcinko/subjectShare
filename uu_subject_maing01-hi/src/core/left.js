@@ -1,9 +1,10 @@
 //@@viewOn:imports
 import UU5 from "uu5g04";
 import "uu5g04-bricks";
-import { createVisualComponent } from "uu5g04-hooks";
+import { createVisualComponent, useDataObject } from "uu5g04-hooks";
 import Plus4U5 from "uu_plus4u5g01";
 import "uu_plus4u5g01-app";
+import Calls from "calls"
 
 import Config from "./config/config.js";
 import Lsi from "../config/lsi.js";
@@ -15,8 +16,11 @@ const STATICS = {
   //@@viewOff:static
 };
 
+
 export const Left = createVisualComponent({
   ...STATICS,
+  
+
 
   //@@viewOn:propTypes
   //@@viewOff:propTypes
@@ -25,6 +29,15 @@ export const Left = createVisualComponent({
   //@@viewOff:defaultProps
 
   render(props) {
+    const auth = useDataObject({
+      handlerMap: {
+        load: Calls.subjectList,
+        
+      }
+    });
+
+    const array = auth.data?.authorizedProfileList||[]
+    let isLogedInA = array.includes('Authorities');
     //@@viewOn:private
     //@@viewOff:private
 
@@ -48,10 +61,13 @@ export const Left = createVisualComponent({
         <Plus4U5.App.MenuTree
           borderBottom
           // NOTE Item "id" equals to useCase so that item gets automatically selected when route changes (see spa-autheticated.js).
+          
           items={[{ id: "home", href: "home", content: <UU5.Bricks.Lsi lsi={Lsi.left.home} />, },
           { id: "subjectList", href: "subjectList", content: <UU5.Bricks.Lsi lsi={{en: "Zobraziť predmety"}} />},
-          { id: "subjectCreate", href: "subjectCreate", content: <UU5.Bricks.Lsi lsi={{en: "Pridať predmet"}} />},
+          
+          {id: "subjectCreate", href: "subjectCreate", content: <UU5.Bricks.Lsi lsi={{en: "Pridať predmet"}} />},
           {id: "studyProgramCreate", href: "studyProgramCreate", content: <UU5.Bricks.Lsi lsi={{en: "Štúdijné programy"}} />},
+          
         ]}
         
         />
