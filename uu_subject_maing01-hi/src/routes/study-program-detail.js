@@ -61,11 +61,11 @@ export const StudyProgramDetail = createVisualComponent({
           );
         } else {
           result = (
-            <UU5.Bricks.Link
+            <div
               
             >
               {studyProgramData.data.name}
-            </UU5.Bricks.Link>
+            </div>
           );
         }
       }

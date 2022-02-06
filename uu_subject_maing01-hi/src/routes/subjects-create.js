@@ -44,8 +44,6 @@ export const SubjectsCreate = createVisualComponent({
       }
     });
 
-
-
     const studyPrograms = [];
     if (studyProgramDataList.data) {
       studyProgramDataList.data.forEach((studyProgram) => {
@@ -56,28 +54,35 @@ export const SubjectsCreate = createVisualComponent({
       });
     }
 
-console.log(studyProgramDataList.data)
+console.log(studyPrograms)
 
 
     const _resolveState = () => {
-      console.log(subjectsDataList.studyProgramList)
           return (
             <div>
               <UU5.Bricks.Section header="Pridanie noveho predmetu">
             <UU5.Forms.Form onSave={_saveForm}>
-                <UU5.Forms.Text label="Nazov predmetu" name="name" />
-                <UU5.Forms.TextArea label="Popis predmetu" name="description" />
-                <UU5.Forms.Number label="Kredity" name="creditLoad" />
-                <UU5.Forms.Text label="Supervisor predmetu" name="supervisor" />
-                <UU5.Forms.TextArea label="Ciel predmetu" name="courseGoal" />
-                <UU5.Forms.Text label="Studium" name="studyDegree" />
-                <UU5.Forms.Text label="Jazyk" name="languageStudy" />
+                <UU5.Forms.Text label="Nazov predmetu" name="name" required/>
+                <UU5.Forms.TextArea label="Popis predmetu" name="description" required/>
+                <UU5.Forms.Number label="Kredity" name="creditLoad" required />
+                <UU5.Forms.Text label="Supervisor predmetu" name="supervisor" required/>
+                <UU5.Forms.TextArea label="Ciel predmetu" name="courseGoal" required/>
+                <UU5.Forms.TagSelect
+              name={"studyDegree"}
+              label={"Štúdium"}
+              availableTags={[{value: 'Bc.', content: 'Bc.'},{value: 'Ing.', content: 'Ing.'}]}
+              multiple={false}
+              controlled={true}
+              required
+            />
+                <UU5.Forms.Text label="Jazyk" name="languageStudy" required />
               <UU5.Forms.TagSelect
               name={"studyProgramList"}
               label={"Štúdijný program"}
               availableTags={studyPrograms}
               multiple={false}
               controlled={true}
+              required
             />
                 <UU5.Forms.Controls buttonSubmitProps={{ enabled: !subjectsDataList.handlerMap.createItem }}/>
             </UU5.Forms.Form>
@@ -88,9 +93,10 @@ console.log(studyProgramDataList.data)
       
     };
     const _saveForm = ({ values }) => {
+      values.studyDegree = values.studyDegree[0]
       subjectsDataList.handlerMap.createItem(values)
-      alert("Predmet sa pridal")
     };
+    
     return <UU5.Bricks.Container>{_resolveState()}</UU5.Bricks.Container>;
     
   },

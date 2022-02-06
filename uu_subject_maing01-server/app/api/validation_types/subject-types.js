@@ -1,13 +1,13 @@
 /* eslint-disable */
 const createSubjectDtoInType = shape({
-   name: uu5String(255).isRequired(),
+   name: string(255).isRequired(),
    description: uu5String(2000),
    creditLoad: number(),
    supervisor: uu5String(255),
    courseGoal: uu5String(255),
-   studyDegree: uu5String(255),
+   studyDegree: string(255),
    languageStudy: uu5String(255),
-   studyProgramList: array(id()),
+   studyProgramList: array().isRequired(),
    studyMaterials: array(id())
  });
 
@@ -20,8 +20,8 @@ const createSubjectDtoInType = shape({
    courseGoal: uu5String(255),
    studyDegree: uu5String(255),
    languageStudy: uu5String(255),
-   studyProgramList: array(id()),
-   studyMaterials: array(id())
+   studyProgramList: array(),
+   studyMaterials: array()
  });
 
  const deleteSubjectDtoInType = shape({
