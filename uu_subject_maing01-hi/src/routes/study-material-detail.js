@@ -63,7 +63,6 @@ export const StudyMaterialDetail = createVisualComponent({
           result = (
             <UU5.Bricks.Link
             download
-            
             href = {"http://localhost:8080/uu-subject-man/22222222222222222222222222222222/uu-app-binarystore/getBinaryData?code=" + studyMaterialData.data.code}
             content = {studyMaterialData.data.filename}
             />

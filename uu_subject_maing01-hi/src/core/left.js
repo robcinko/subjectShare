@@ -35,9 +35,6 @@ export const Left = createVisualComponent({
         
       }
     });
-
-    const array = auth.data?.authorizedProfileList||[]
-    let isLogedInA = array.includes('Authorities');
     //@@viewOn:private
     //@@viewOff:private
 
@@ -61,13 +58,11 @@ export const Left = createVisualComponent({
         <Plus4U5.App.MenuTree
           borderBottom
           // NOTE Item "id" equals to useCase so that item gets automatically selected when route changes (see spa-autheticated.js).
-          
           items={[{ id: "home", href: "home", content: <UU5.Bricks.Lsi lsi={Lsi.left.home} />, },
-          { id: "subjectList", href: "subjectList", content: <UU5.Bricks.Lsi lsi={{en: "Zobraziť predmety"}} />},
+          {id: "subjectList", href: "subjectList", content: <UU5.Bricks.Lsi lsi={{en: "Zobraziť predmety"}} />},
           
           {id: "subjectCreate", href: "subjectCreate", content: <UU5.Bricks.Lsi lsi={{en: "Pridať predmet"}} />},
           {id: "studyProgramCreate", href: "studyProgramCreate", content: <UU5.Bricks.Lsi lsi={{en: "Štúdijné programy"}} />},
-          
         ]}
         
         />
