@@ -12,7 +12,7 @@ class StudyProgramController {
   }
 
   list(ucEnv) {
-    return StudyProgramAbl.list(ucEnv.getUri().getAwid(), ucEnv.getDtoIn());
+    return StudyProgramAbl.list(ucEnv.getUri().getAwid(), ucEnv.getDtoIn(), ucEnv.getAuthorizationResult());
   }
 
   load(ucEnv) {

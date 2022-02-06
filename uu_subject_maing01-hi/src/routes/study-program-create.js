@@ -1,6 +1,6 @@
 //@@viewOn:imports
 import UU5 from "uu5g04";
-import { createVisualComponent, useDataList } from "uu5g04-hooks";
+import { createVisualComponent, useDataList, useDataObject } from "uu5g04-hooks";
 import Config from "./config/config";
 import Uu5Tiles from "uu5tilesg02";
 import Calls from "calls";
@@ -34,7 +34,18 @@ export const StudyProgramCreate = createVisualComponent({
         delete: Calls.studyProgramDelete,
       }
     });
-    
+
+    const auth = useDataObject({
+      handlerMap: {
+        load: Calls.studyProgramList,
+        
+      }
+    });
+
+//authoriazation check
+const array = auth.data?.authorizedProfileList||[]
+let isLogedInB = array.includes('Authorities');
+
     const _resolveState = () => {
       switch (studyProgramDataList.state) {
         case "pendingNoData":
@@ -48,6 +59,7 @@ export const StudyProgramCreate = createVisualComponent({
               <UU5.Bricks.Section header="Štúdijné programy"></UU5.Bricks.Section>
               <Uu5Tiles.List
                 data={studyProgramDataList.data}
+                
                 columns={[
                   {
                     key: "name",
@@ -55,8 +67,11 @@ export const StudyProgramCreate = createVisualComponent({
                     header: "Meno",
                   },
                   {
+                    
                     key: "delete",
                     cell: (cellProps) => (
+                      <>
+                      {isLogedInB&&(<>
                       <UU5.Bricks.Button
                         disabled={!cellProps.data.handlerMap.delete}
                         colorSchema="danger"
@@ -64,20 +79,24 @@ export const StudyProgramCreate = createVisualComponent({
                           cellProps.data.handlerMap.delete();
                         }}
                       >
+                        
                         <UU5.Bricks.Icon icon="mdi-delete" />
                       </UU5.Bricks.Button>
+                      </> )}
+                      </>
                     ),
                     header: "Delete",
                   },
                 ]}
               />
-
+                      {isLogedInB&&(<>
               <UU5.Bricks.Section header="Nový štúdijný program">
             <UU5.Forms.Form onSave={_saveForm}>
-                <UU5.Forms.Text label="Nazov štúdijného programu" name="name" />
+                <UU5.Forms.Text label="Nazov štúdijného programu" name="name" required/>
                 <UU5.Forms.Controls buttonSubmitProps={{ enabled: !studyProgramDataList.handlerMap.createItem }}/>
             </UU5.Forms.Form>
             </UU5.Bricks.Section>
+            </> )}
             </div>
           );
           }

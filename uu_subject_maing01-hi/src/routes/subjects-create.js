@@ -63,10 +63,10 @@ console.log(studyPrograms)
               <UU5.Bricks.Section header="Pridanie noveho predmetu">
             <UU5.Forms.Form onSave={_saveForm}>
                 <UU5.Forms.Text label="Nazov predmetu" name="name" required/>
-                <UU5.Forms.TextArea label="Popis predmetu" name="description" required/>
+                <UU5.Forms.TextArea label="Popis predmetu" name="description"/>
                 <UU5.Forms.Number label="Kredity" name="creditLoad" required />
                 <UU5.Forms.Text label="Supervisor predmetu" name="supervisor" required/>
-                <UU5.Forms.TextArea label="Ciel predmetu" name="courseGoal" required/>
+                <UU5.Forms.TextArea label="Ciel predmetu" name="courseGoal"/>
                 <UU5.Forms.TagSelect
               name={"studyDegree"}
               label={"Štúdium"}
@@ -75,7 +75,7 @@ console.log(studyPrograms)
               controlled={true}
               required
             />
-                <UU5.Forms.Text label="Jazyk" name="languageStudy" required />
+                <UU5.Forms.Text label="Jazyk" name="languageStudy" />
               <UU5.Forms.TagSelect
               name={"studyProgramList"}
               label={"Štúdijný program"}

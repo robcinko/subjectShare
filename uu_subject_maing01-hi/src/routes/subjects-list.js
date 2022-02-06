@@ -85,7 +85,7 @@ export const SubjectList = Data(
       const attrs = UU5.Common.VisualComponent.getAttrs(props, className);
       const currentNestingLevel = UU5.Utils.NestingLevel.getNestingLevel(props, STATICS);
       
-      
+      //authoriazation check
       const array = auth.data?.authorizedProfileList||[]
       let isLogedInA = array.includes('Authorities');
       

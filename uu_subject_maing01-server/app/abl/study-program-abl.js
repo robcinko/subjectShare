@@ -72,9 +72,11 @@ class StudyProgramAbl {
     
   }
 
-  async list(awid, dtoIn) {
+  async list(awid, dtoIn, authorizationResult) {
     let result
+    let authorizedProfiles = authorizationResult.getAuthorizedProfiles();
     result = await this.dao.list(awid, dtoIn.sortBy, dtoIn.order, dtoIn.pageInfo);
+    result.authorizedProfileList = authorizedProfiles;
     return result 
   }
 
